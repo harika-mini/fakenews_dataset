@@ -1,55 +1,64 @@
-# Fake News Dataset 📊
-Welcome to the Fake News Dataset repository! This dataset is curated to support research and development in fake news detection systems, including deep learning models like LSTM and BiLSTM. It is intended for educational and research purposes only.
+Fake News Dataset 📊
+Welcome to the Fake News Dataset repository! This dataset includes two separate collections of labeled news articles, categorized as fake and true, to aid in the development of machine learning models for fake news detection. The dataset is intended for educational and research purposes only.
 
-## 📄 Dataset Overview
-The Fake News Dataset contains labeled news articles and headlines designed to train machine learning models to distinguish between real and fake news. This dataset is ideal for projects in NLP and fake news detection, including the TruthGuard system.
+📄 Dataset Overview
+The dataset contains two files:
 
-## Data Format
-Each record in the dataset includes the following fields:
+Fake.csv: Contains news articles labeled as fake.
+True.csv: Contains news articles labeled as true.
+Each file includes various attributes for each article, such as title, content, and publication date, to help develop and train accurate models for distinguishing between real and fake news articles.
 
-### ID: 
-Unique identifier for each news article.
-### Title: 
-Headline of the news article.
-### Text: 
-Full text of the news article (when available).
-### Label: 
-Classification of news as either fake or real.
+🗂️ Data Format
+Each record in both datasets (Fake.csv and True.csv) includes the following fields:
 
-## Data Structure
-The dataset is stored in CSV format with the following structure:
+Title: The headline of the news article.
+Text: The full content of the news article.
+Subject: The subject category of the article.
+Date: The publication date of the article.
+Example Structure
+Title	Text	Subject	Date
+"Fake News Headline"	"Content of the fake article."	"Politics"	2024-10-01
+"True News Headline"	"Content of the true article."	"Health"	2024-10-02
+📊 Dataset Details
+File 1: Fake.csv
 
-| ID   | Title                      | Text                           | Label |
-|------|----------------------------|--------------------------------|-------|
-| 1    | "Breaking News Headline"   | "Detailed article text here."  | fake  |
-| 2    | "Another News Headline"    | "Another article text here."   | real  |
-| ...  | ...                        | ...                            | ...   |
+Total Articles: Approximately 5,000+ (example count)
+Subjects: Politics, World, Economy, etc.
+File 2: True.csv
 
-## Dataset Size
-Total Articles: 10,000+ 
-File Size: Approximately 50MB
+Total Articles: Approximately 5,000+ (example count)
+Subjects: Politics, Health, Technology, etc.
+🛠️ Usage
+Step 1: Download
+Clone this repository or download the dataset files directly.
 
-## 🛠️ Usage
-### Step 1: Download
-Download the dataset from this repository or from the direct download link (replace with actual link).
+Step 2: Load the Datasets
+Use Pandas or another library to load the datasets and prepare them for analysis:
 
-### Step 2: Load the Dataset
-Load the dataset using Pandas or another CSV-compatible library for analysis.
-
-python,
+python
+Copy code
 import pandas as pd
 
-#### Load the dataset
-df = pd.read_csv('fakenews_dataset.csv')
+# Load the fake and true datasets
+fake_df = pd.read_csv('Fake.csv')
+true_df = pd.read_csv('True.csv')
 
-#### Display dataset structure
-print(df.head())
+# Preview the data
+print(fake_df.head())
+print(true_df.head())
+Step 3: Combine and Label (Optional)
+For training, you may want to combine both datasets and add a label column to indicate fake or true news:
 
-### Step 3: Train Your Model
-Use this dataset to train your fake news detection model. Suggested models include LSTM, BiLSTM, and other NLP-based architectures.
+python
+Copy code
+# Add label columns
+fake_df['label'] = 0  # Fake news
+true_df['label'] = 1  # True news
 
-## ⚠️ License and Usage Policy
-This dataset is provided for educational and research purposes only. Commercial use is prohibited.
+# Combine datasets
+combined_df = pd.concat([fake_df, true_df], ignore_index=True)
+⚠️ License and Usage Policy
+This dataset is intended for educational and research purposes only. Any commercial use is prohibited.
 
-## 🤝 Contributing
-Contributions are welcome! If you have additional data, improvements, or ideas to enhance this dataset, feel free to submit a pull request or reach out to discuss.
+🤝 Contributing
+Contributions to improve this dataset are welcome! If you have additional data, improvements, or suggestions, feel free to submit a pull request or reach out to discuss.
