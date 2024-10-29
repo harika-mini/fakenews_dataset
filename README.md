@@ -30,11 +30,11 @@ Each record in both datasets (Fake.csv and True.csv) includes the following fiel
 ## 📊 Dataset Details
 
 ### File 1: Fake.csv
-- **Total Articles**: Approximately 5,000+ (example count)
+- **Total Articles**: Approximately 23,503.
 - **Subjects**: Politics, World, Economy, etc.
 
 ### File 2: True.csv
-- **Total Articles**: Approximately 5,000+ (example count)
+- **Total Articles**: Approximately 21,418.
 - **Subjects**: Politics, Health, Technology, etc.
 
 ## 🛠️ Usage
