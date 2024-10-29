@@ -56,6 +56,18 @@ true_df = pd.read_csv('True.csv')
 print(fake_df.head())
 print(true_df.head())
 ```
+### Step 3: Combine and Label (Optional)
+For training, you may want to combine both datasets and add a label column to indicate fake or true news:
+
+```python
+# Add label columns
+fake_df['label'] = 0  # Fake news
+true_df['label'] = 1  # True news
+
+# Combine datasets
+combined_df = pd.concat([fake_df, true_df], ignore_index=True)
+```
+
 ## ⚠️ License and Usage Policy
 This dataset is intended for educational and research purposes only. Any commercial use is prohibited.
 
